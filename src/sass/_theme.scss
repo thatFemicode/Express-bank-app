@@ -1,0 +1,68 @@
+#theme-toggle {
+  cursor: pointer;
+  background: 0;
+  border: 0;
+  opacity: 0.8;
+  border-radius: 50%;
+  position: relative;
+
+  svg {
+    fill: map-get($map: $colors, $key: op);
+    width: 30px;
+    height: 30px;
+
+    .toggle-circle {
+      transition: transform 500ms ease-out;
+    }
+    .toggle-sun {
+      transform-origin: center center;
+      transition: transform 750ms cubic-bezier(0.11, 0.14, 0.29, 1.32);
+    }
+  }
+}
+
+// Variables for dark and light mode
+
+$background-light: #dcdcdc;
+$mainContainer-light: rgba(255, 255, 255, 0.3);
+$dashboard-body-light: rgba(255, 255, 255, 0.3);
+
+$background-dark: #292524;
+$mainContainer-dark: #292524;
+$dashboard-body-dark: #292524;
+
+$themes: (
+  light: (
+    bg-primary: $background-light,
+    container: $mainContainer-light,
+    dashboard: $dashboard-body-light,
+  ),
+  dark: (
+    bg-primary: $background-dark,
+    container: $mainContainer-dark,
+    dashboard: $dashboard-body-dark,
+  ),
+);
+
+@mixin themify($themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}

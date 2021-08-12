@@ -1,0 +1,222 @@
+.chip-image {
+  padding-left: 20px;
+  width: 50px;
+  height: auto;
+}
+.card-logo {
+  padding-top: 12px;
+  // padding-left: 290px;
+  margin-left: 200px;
+  color: transparent;
+  width: 90px;
+  height: auto;
+  background-image: none;
+}
+// .card-bottom-row {
+//   color: white;
+//   margin-top: 25px;
+//   justify-content: space-around;
+// }
+.card-no {
+  // padding-top: 10px;
+  margin-top: 20px;
+  padding-left: 38px;
+  color: white;
+  letter-spacing: 3px;
+  word-spacing: 8px;
+  font-size: 15px;
+}
+.cards {
+  width: 300px;
+  backdrop-filter: blur(3px);
+  z-index: +1;
+  height: 208px;
+  border: 0.8px solid transparent;
+  border-radius: 20px;
+  box-shadow: 0.5px 0.5px 4px 0.1px;
+  // background: linear-gradient(
+  //   rgba(255, 255, 255, 0.1),
+  //   rgba(106, 104, 104, 0.1)
+  // );
+  // background-color: #2d3436;
+  // background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
+  background-color: #000000;
+  background-image: linear-gradient(315deg, #000000 0%, #7f8c8d 74%);
+  transform: rotate(15deg);
+}
+.card-bottom-row {
+  color: white;
+  // padding-top: 10px;
+  margin-top: 25px;
+  justify-content: space-around;
+}
+.card-bottom-row,
+.cards-row,
+.all-rounded-cicrle,
+.card-bottom-row-2,
+.rounded-circle-row,
+.bottom-page-rounded-circle {
+  display: flex;
+}
+.card-bottom-row,
+.cards-row,
+.all-rounded-cicrle,
+.rounded-circle-row,
+.bottom-page-rounded-circle {
+  flex-direction: row;
+}
+.card {
+  position: relative;
+
+  width: 300px;
+  height: 200px;
+  border-radius: 25px;
+  // background: rgba(255, 255, 255, 0.2);
+  // backdrop-filter: blur(30px);
+  background-color: #000000;
+  background-image: linear-gradient(315deg, #000000 0%, #7f8c8d 74%);
+
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transform: rotate(90deg);
+  margin-left: 30px;
+
+  @media screen and(max-width:1000px) {
+    // flex-direction: row;
+    transform: rotate(15deg);
+  }
+  @media screen and(max-width:756px) {
+    // flex-direction: row;
+    transform: rotate(0deg);
+    margin-left: 0;
+  }
+
+  // @include breakpoint-up(card) {
+  //   margin-left: 30px;
+  //   height: 270px;
+  //   width: 400px;
+  // }
+  // @include breakpoint-down(break){
+  //   width: 250px;
+  //   height: 200px
+  // }
+}
+
+.logo img,
+.chip img,
+.number,
+.name,
+.from,
+.to,
+.ring {
+  position: absolute; /* All items inside card should have absolute position */
+}
+
+.logo svg {
+  top: 30px;
+  right: 30px;
+  width: 70px;
+  padding-left: 20px;
+  padding-top: 20px;
+  height: auto;
+  opacity: 0.8;
+}
+.logo img {
+  top: 35px;
+  right: 40px;
+  width: 80px;
+  height: auto;
+  opacity: 0.8;
+}
+
+.chip img {
+  top: 120px;
+  left: 40px;
+  width: 50px;
+  height: auto;
+  // opacity: 0.8;
+}
+
+.number,
+.name,
+.from,
+.to {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+}
+
+.number {
+  left: 40px;
+  bottom: 85px;
+  font-family: 'Nunito', sans-serif;
+
+  // @include breakpoint-up(card) {
+  //   left: 40px;
+  //   bottom: 65px;
+  // }
+}
+
+.name {
+  font-size: 0.5rem;
+  left: 40px;
+  bottom: 25px;
+  // @include breakpoint-up(card) {
+  //   left: 40px;
+  //   bottom: 35px;
+  // }
+}
+
+.from {
+  font-size: 0.5rem;
+  bottom: 25px;
+  right: 90px;
+  // @include breakpoint-up(card) {
+  //   bottom: 35px;
+  // }
+}
+
+.to {
+  font-size: 0.5rem;
+  bottom: 25px;
+  right: 40px;
+  // @include breakpoint-up(card) {
+  //   bottom: 35px;
+  // }
+}
+
+/* The two rings on the card background */
+.ring {
+  height: 500px;
+  width: 500px;
+  border-radius: 50%;
+  background: transparent;
+  border: 50px solid rgba(255, 255, 255, 0.1);
+  bottom: -250px;
+  right: -250px;
+  box-sizing: border-box;
+}
+
+.ring::after {
+  content: '';
+  position: absolute;
+  height: 600px;
+  width: 600px;
+  border-radius: 50%;
+  background: transparent;
+  border: 30px solid rgba(255, 255, 255, 0.1);
+  bottom: -80px;
+  right: -110px;
+  box-sizing: border-box;
+}
+.cards {
+  display: none;
+  @media screen and(min-width:1100px) {
+    display: block;
+    transform: rotate(0deg);
+    bottom: 150px;
+    right: 230px;
+  }
+}

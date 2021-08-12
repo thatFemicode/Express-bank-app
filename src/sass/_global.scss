@@ -1,0 +1,43 @@
+.padding {
+  padding: 2rem 2rem;
+
+  @include breakpoint-up(middle) {
+    padding: 2rem 4rem;
+  }
+  @media screen and (min-width: 1000px) {
+    padding: 2rem 6rem;
+  }
+}
+.page {
+  position: relative;
+  max-width: 120rem;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+
+.hide-for-desktop {
+  @include breakpoint-up(middle) {
+    display: none;
+  }
+}
+.hide-for-mobile {
+  @include breakpoint-down(middle) {
+    display: none;
+  }
+}
+.hide-for {
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+}
+.hide-on {
+  @media screen and (min-width: 659px) {
+    display: none;
+  }
+}
+.hide-in {
+  @media screen and (min-width: 614px) {
+    display: none;
+  }
+}

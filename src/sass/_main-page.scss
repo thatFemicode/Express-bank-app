@@ -1,0 +1,212 @@
+.header {
+  &-hero {
+    position: relative;
+
+    @include breakpoint-up(middle) {
+      position: relative;
+      display: flex;
+      // flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      top: 20%;
+      // margin: auto 0;
+      width: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    @media screen and(min-width:756px) {
+      flex-direction: row;
+      top: 10%;
+    }
+    @media screen and(max-width:1160px) {
+      // flex-direction: row;
+      top: 5%;
+      width: 100%;
+    }
+  }
+  &-margin {
+    // margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (max-width: 320px) {
+      width: 110%;
+    }
+  }
+  &-img {
+    width: 80px;
+  }
+  &-button {
+    padding: 0.5rem 1.5rem;
+
+    // height: 1rem;
+    height: 100%;
+  }
+  // &-hero {
+  //   position: relative;
+  // }
+
+  &-text {
+    // font-size: clamp(1.2rem, 2vw, 3rem);
+    flex: 2;
+    width: 100%;
+    @media screen and (max-width: 345px) {
+      padding-top: 0rem;
+    }
+    @media screen and (min-width: 1200px) {
+      padding-left: 4rem;
+    }
+
+    @include breakpoint-up(middle) {
+      width: 80%;
+      padding-top: 0.7rem;
+      // font-size: 1.2rem;
+      line-height: 1.2;
+      color: map-get($map: $colors, $key: button);
+    }
+    @include breakpoint-up(card) {
+      width: 100%;
+    }
+    &-h3 {
+      font-size: clamp(1rem, 1vw, 3rem);
+    }
+    &-description {
+      font-size: clamp(1rem, 9vw, 4rem);
+      width: 80%;
+
+      @media screen and(max-width:1000px) {
+        // flex-direction: row;
+        width: 100%;
+      }
+    }
+
+    &-texts {
+      // background-image: linear-gradient(
+      //   to left,
+      //   violet,
+      //   indigo,
+      //   rgb(16, 16, 236),
+      //   orange,
+      //   red
+      // );
+      // -webkit-background-clip: text;
+      // -webkit-text-fill-color: transparent;
+    }
+  }
+  &-image {
+    position: relative;
+    // display: flex;
+    // width: 100%;
+    // margin: 0 auto;
+    // justify-content: center;
+    // top: 80px;
+    // bottom: -200%;
+    @media screen and (max-width: 415px) {
+      margin-top: 6rem;
+    }
+    @media screen and (max-width: 376px) {
+      margin-top: 3rem;
+    }
+    @media screen and (max-width: 320px) {
+      margin-top: 0rem;
+    }
+
+    &-1 {
+      top: 15px;
+      right: 20%;
+      // transform: translateX(17%);
+      position: absolute;
+      // left: 205px;
+      z-index: -1;
+      @include dc(map-get($map: $colors, $key: button));
+      // @include dc(rgba(255, 255, 255, 0.72));
+      border-radius: 5px;
+      padding: 0.3rem 1rem;
+      border: none;
+      @media screen and (max-width: 320px) {
+        right: 12%;
+      }
+      @media screen and (max-width: 360px) {
+        right: 15%;
+      }
+      @media screen and (max-width: 375px) {
+        right: 19%;
+      }
+    }
+    &-2 {
+      // top: 170px;
+      position: absolute;
+      z-index: -1;
+      left: 24%;
+      top: 200px;
+      @include dc(map-get($map: $colors, $key: button));
+      // @include dc(rgba(255, 255, 255, 0.72));
+      border-radius: 7px;
+      border: none;
+      border-radius: 5px;
+      padding: 0.3rem 1rem;
+      // top: 0;
+      @media screen and (max-width: 320px) {
+        left: 10%;
+        padding: 0.3rem 0.7rem;
+      }
+      @media screen and (max-width: 360px) {
+        left: 18%;
+      }
+    }
+  }
+  &-hand {
+    width: 70%;
+    position: relative;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &-cards {
+    flex: 1;
+    width: 100%;
+    position: relative;
+    // display: flex;
+    // align-self: flex-start;
+    margin-top: 40px;
+    // width: 20%px;
+  }
+  &-buttonss {
+    margin-top: 20px;
+  }
+}
+.circle1,
+.circle2 {
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.3)
+  );
+  height: 20rem;
+  width: 20rem;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.circle1 {
+  top: 50%;
+  right: -15%;
+
+  @media screen and(max-width:500px) {
+    top: 80%;
+    right: 70%;
+  }
+}
+.circle2 {
+  top: 120%;
+  left: -12%;
+}

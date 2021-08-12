@@ -1,0 +1,159 @@
+@import './theme';
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  // background-color: #d6cde2;
+  // background: #161621;
+  // background: #d6cde2;
+  // background-color: #edc0bf;
+  // background: linear-gradient(90deg, #edc0bf 0, #c4caef 58%);
+  // background: #292524;
+  background: #dcdcdc;
+  // background-image: url(https://4kwallpapers.com/images/wallpapers/macos-big-sur-apple-layers-fluidic-colorful-dark-wwdc-2020-5120x2880-1432.jpg);
+  //   background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+  //   background: linear-gradient(to bottom, #eeeeee 0%, #cccccc 100%);
+  //   background-image: linear-gradient(to right, #a75aab, #5d3240);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+
+  // @media screen and(min-width: 768px) {
+  //   height: 105vh;
+  // }
+
+  &.noscroll {
+    overflow: hidden;
+  }
+
+  // &::before {
+  //   content: "";
+  //   position: fixed;
+  //   left: 0;
+  //   top: 0;
+  //   height: 100%;
+  //   width: 100%;
+  //   // background-color: #000;
+  //   z-index: -4;
+  //   opacity: 0.15;
+  // }
+
+  &.theme-dark {
+    background: $background-dark;
+
+    #theme-toggle::before {
+      animation: pulseToDark 650ms ease-out;
+    }
+
+    .main-container {
+      background: $mainContainer-dark;
+    }
+
+    .dashboard-body {
+      background: $background-dark;
+
+      &-opener {
+        background: #fff;
+        color: #292524;
+      }
+      &-account {
+        background: #fff;
+        color: #292524;
+      }
+    }
+    .dashboard-main-account-movement {
+      background: $background-dark;
+      color: #dcdcdc;
+    }
+    .dashboard-main-operation-card {
+      background: #fff;
+      color: #292524;
+    }
+  }
+  &.light-theme {
+    background: $background-light;
+
+    #theme-toggle::before {
+      animation: pulseToLight 650ms ease-out;
+    }
+
+    .dashboard-nav-button-toggle {
+      svg {
+        .toggle-circle {
+          transform: translateX(-15%);
+        }
+        .toggle-sun {
+          transform: rotate(0.5turn);
+        }
+      }
+    }
+    .main-container {
+      background: $mainContainer-light;
+    }
+
+    .dashboard-body {
+      background: $background-light;
+
+      &-opener {
+        background: #292524;
+      }
+      &-account {
+        background: #292524;
+      }
+    }
+    .dashboard-main-account-movement {
+      background: $background-light;
+    }
+    .dashboard-main-operation-card {
+      background: #292524;
+    }
+  }
+}
+img {
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+@keyframes pulseToLight {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  10% {
+    transform: scale(1);
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseToDark {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  10% {
+    transform: scale(1);
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}

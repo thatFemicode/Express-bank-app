@@ -1,0 +1,13 @@
+.header-button {
+  @include dc(map-get($map: $colors, $key: button));
+  // @include dc(rgba(255, 255, 255, 0.72));
+  border-radius: 7px;
+  border: none;
+}
+.header-buttons {
+  @include dc(#dcdcdc);
+  // @include dc(rgba(255, 255, 255, 0.72));
+  border-radius: 7px;
+  border: none;
+  padding: 0.2rem 0.5rem;
+}
