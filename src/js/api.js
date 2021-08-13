@@ -22,10 +22,10 @@ export function weatherApi() {
       navigator.geolocation.getCurrentPosition(function (position) {
         lat = position.coords.latitude;
         long = position.coords.longitude;
-        console.log(lat, long);
+        // console.log(lat, long);
         const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=18a143b3f0c9d0d9dcc8c5b30028f6c0`;
         getWeather(api).then((data) => {
-          console.log(data);
+          // console.log(data);
           // console.log(temp);
           // const sumbol = `&#8451;`
           const { country } = data.sys;

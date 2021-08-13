@@ -83,18 +83,18 @@ const accounts4 = {
 // Accounts Array
 const accounts = [accounts1, accounts2, accounts3, accounts4];
 
-console.log(accounts);
+// console.log(accounts);
 
 const ELS_pages = document.querySelectorAll('.page');
 const ELS_buttons = document.querySelectorAll('[data-page]');
 
-console.log(ELS_pages);
-console.log(ELS_buttons);
+// console.log(ELS_pages);
+// console.log(ELS_buttons);
 const goToPage = (id) => {
   ELS_pages.forEach((EL, i) => {
     // console.log(EL.id);
-    console.log(`${i} : ${EL.id}`);
-    console.log(id);
+    // console.log(`${i} : ${EL.id}`);
+    // console.log(id);
     // EL.classList.toggle("u-none", EL.id !== id);
     if (EL.id === id) {
       setTimeout(() => {
@@ -228,7 +228,7 @@ const addAccount = () => {
     exc: +exchange.value,
   };
   accounts.push(accountss);
-  console.log(accounts);
+  // console.log(accounts);
   localStorage.setItem('details', JSON.stringify(accountss));
 };
 // Getting UI element to change text content
@@ -302,7 +302,7 @@ function formatDate(date, locale) {
     Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
 
   const daysPassed = calcDaysPassed(new Date(), date);
-  console.log(daysPassed);
+  // console.log(daysPassed);
 
   if (daysPassed === 0) return 'Today';
   if (daysPassed === 1) return 'Yesterday';
@@ -396,7 +396,7 @@ function createUser(accs) {
   accs.forEach((acc) => {
     acc.username = acc.owner.toLowerCase().split(' ')[0];
   });
-  console.log(accs.username);
+  // console.log(accs.username);
   // console.log(accs.username);
 }
 
@@ -455,7 +455,7 @@ btnLogin.addEventListener('click', function (e) {
   }
   const greeting = (greets.textContent = `Good ${greet}`);
   currentAccount = accounts.find((acc) => acc.username === loginInput.value);
-  console.log(currentAccount);
+  // console.log(currentAccount);
 
   if (currentAccount?.pin === +loginPin.value) {
     accountOwner.textContent = `${greeting} ${
@@ -498,9 +498,9 @@ btnTransfer.addEventListener('click', function (e) {
   // console.log(receiver.value);
   e.preventDefault();
   const receiverAcc = accounts.find((acc) => acc.username === receiver.value);
-  console.log(receiverAcc);
+  // console.log(receiverAcc);
   const amount = +amounts.value * receiverAcc.exc;
-  console.log(amount);
+  // console.log(amount);
   amounts.value = receiver.value = '';
 
   if (
