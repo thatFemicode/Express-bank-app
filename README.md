@@ -4,3 +4,6 @@ About A Fictional bank Application that leverages a third party API to get locat
 
 <!-- ![Design preview for Express bank](src\assets\Express1.png) -->
 <img src="src\assets\Express1.png" alt="project screenshot">
+<img src="src\assets\Express2.png" alt="project screenshot">
+<img src="src\assets\Express3.png" alt="project screenshot">
+<img src="src\assets\Express4.png" alt="project screenshot">
