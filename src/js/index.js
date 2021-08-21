@@ -1,4 +1,5 @@
 'use strict';
+require('regenerator-runtime/runtime');
 import sass from '../sass/main.scss';
 import { tabbedComponent } from './tabbedcomponent';
 import { getLocation } from './api';
@@ -260,7 +261,7 @@ apis.locationApi();
 // console.log(accounts.accounts1);
 
 // Login modal functionality
-const modals = document.querySelector('.show-modal');
+const modals = document.querySelector('#login');
 const modal = document.querySelector('.modal');
 const closeModal = document.querySelector('.btn-close-modal');
 const overlay = document.querySelector('.overlay');
@@ -273,6 +274,7 @@ function closeModals(e) {
   modal.classList.add('hidden');
   overlay.classList.add('hidden');
 }
+// modals.addEventListener('click', openModal);
 modals.addEventListener('click', openModal);
 closeModal.addEventListener('click', closeModals);
 overlay.addEventListener('click', closeModals);

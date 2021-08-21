@@ -1,4 +1,5 @@
 const path = require('path');
+require('@babel/polyfill'); // necesarry
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -7,9 +8,10 @@ const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 let mode = 'development';
-
+let target = 'web';
 if (process.env.NODE_ENV === 'production') {
   mode = 'production';
+  target = 'browserslist';
 }
 // const plugins = [
 //   // new HtmlWebpackPlugin({
@@ -40,12 +42,14 @@ const plugins = [
 ];
 module.exports = {
   mode: mode,
+  target: target,
   devtool: 'source-map',
 
   entry: {
     main: './src/js/index.js',
     vendor: './src/js/vendor.js',
   },
+
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].js',
@@ -69,23 +73,23 @@ module.exports = {
           'sass-loader',
         ],
       },
-      {
-        test: /\.js?$/,
-        exclude: /node_modules/,
-        use: {
-          // without additional settings, this will reference .babelrc
-          loader: 'babel-loader',
-          options: {
-            /**
-             * From the docs: When set, the given directory will be used
-             * to cache the results of the loader. Future webpack builds
-             * will attempt to read from the cache to avoid needing to run
-             * the potentially expensive Babel recompilation process on each run.
-             */
-            cacheDirectory: true,
-          },
-        },
-      },
+      // {
+      //   test: /\.js?$/,
+      //   exclude: /node_modules/,
+      //   use: {
+      //     // without additional settings, this will reference .babelrc
+      //     loader: 'babel-loader',
+      //     options: {
+      //       presets: ['@babel/preset-env'],
+      //       /**
+      //        * From the docs: When set, the given directory will be used
+      //        * to cache the results of the loader. Future webpack builds
+      //        * will attempt to read from the cache to avoid needing to run
+      //        * the potentially expensive Babel recompilation process on each run.
+      //        */
+      //     },
+      //   },
+      // },
       {
         test: /\.(svg|png|jpg|gif|webp)$/,
         type: 'asset/resource',
@@ -108,7 +112,7 @@ module.exports = {
     //         proxyReq.setHeader('origin', 'http://localhost:3000');
     //       }
     //     },
-    //     // hot: true,
+    hot: true,
     //   },
     // },
   },

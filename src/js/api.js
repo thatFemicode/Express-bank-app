@@ -36,22 +36,22 @@ export function weatherApi() {
           ${tempValue}
           <span class="dashboard-temp-unit">&#8451;</span>
         </p>`;
-          if (id < 250) {
-            icon.src = storm;
-          } else if (id < 350) {
-            icon.src = drizzle;
-          } else if (id < 550) {
-            icon.src = rain;
-          } else if (id < 650) {
-            icon.src = snow;
-          } else if (id < 800) {
-            icon.src = atmosphere;
-          } else if (id === 800) {
-            icon.src = sun;
-          } else if (id > 800) {
-            icon.src = cloud;
-            // icon.setAttribute('src', cloud);
-          }
+          // if (id < 250) {
+          //   icon.src = storm;
+          // } else if (id < 350) {
+          //   icon.src = drizzle;
+          // } else if (id < 550) {
+          //   icon.src = rain;
+          // } else if (id < 650) {
+          //   icon.src = snow;
+          // } else if (id < 800) {
+          //   icon.src = atmosphere;
+          // } else if (id === 800) {
+          //   icon.src = sun;
+          // } else if (id > 800) {
+          //   icon.src = cloud;
+          //   // icon.setAttribute('src', cloud);
+          // }
         });
       });
     }
