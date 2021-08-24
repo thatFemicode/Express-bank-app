@@ -112,7 +112,7 @@ module.exports = {
     //         proxyReq.setHeader('origin', 'http://localhost:3000');
     //       }
     //     },
-    hot: true,
+    // hot: true,
     //   },
     // },
   },

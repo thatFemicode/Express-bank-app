@@ -3,6 +3,7 @@
   // @include dc(rgba(255, 255, 255, 0.72));
   border-radius: 7px;
   border: none;
+  outline: none;
 }
 .header-buttons {
   @include dc(#dcdcdc);
