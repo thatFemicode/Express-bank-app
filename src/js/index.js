@@ -600,3 +600,10 @@ const hide = document.querySelector('.hide-in');
 hide.addEventListener('click', function (e) {
   e.preventDefault();
 });
+
+const services = document.querySelector('.services');
+
+services.addEventListener('click', function (e) {
+  e.preventDefault();
+  window.location.href = 'https://expressbankwebsite.netlify.app/';
+});
